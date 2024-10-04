@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Accordion({ sections }) {
   const [openSections, setOpenSections] = useState(
@@ -42,7 +42,7 @@ export default function Accordion({ sections }) {
             </div>
           </div>
         );
-      })}      
+      })}
     </div>
   );
 }

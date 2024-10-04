@@ -1,5 +1,28 @@
-import Table from './Table';
-import React, { useState } from 'react';
+import { useState } from 'react';
+
+function Table({ rows, columns }) {
+  return (
+    <table>
+      <tbody>
+        {Array.from({ length: rows }, () => 0).map(
+          (_, row) => (
+            <tr key={row}>
+              {Array.from({ length: columns }, () => 0).map(
+                (_, col) => (
+                  <td key={col}>
+                    {col % 2 === 0
+                      ? rows * col + (row + 1)
+                      : rows * (col + 1) - row}
+                  </td>
+                ),
+              )}
+            </tr>
+          ),
+        )}
+      </tbody>
+    </table>
+  );
+}
 
 export default function App() {
   const [rows, setRows] = useState('');
@@ -9,8 +32,10 @@ export default function App() {
     <div className="app">
       <form
         onSubmit={(event) => {
+          // To prevent a page reload.
           event.preventDefault();
 
+          // Obtain data from the form.
           const data = new FormData(event.target);
           const rows = data.get('rows');
           setRows(Number(rows));
@@ -28,7 +53,7 @@ export default function App() {
           />
         </div>
         <div>
-          <label htmlForm="columns">Columns</label>
+          <label htmlFor="columns">Columns</label>
           <input
             id="columns"
             name="columns"

@@ -1,3 +1,9 @@
+/**
+ * @param {string} username
+ * @param {string} email
+ * @param {string} password
+ * @param {string} passwordConfirm
+ */
 async function submitForm(
   username,
   email,
@@ -5,18 +11,21 @@ async function submitForm(
   passwordConfirm,
 ) {
   try {
-    const response = await fetch('url', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
+    const response = await fetch(
+      'https://www.greatfrontend.com/api/questions/sign-up',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+          password_confirm: passwordConfirm,
+        }),
       },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-        password_confirm: passwordConfirm,
-      }),
-    });
+    );
 
     const { message } = await response.json();
     alert(message);
@@ -36,15 +45,19 @@ async function submitForm(
 
   $form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    // Reset the password confirm field.
     $passwordConfirmInput.removeAttribute('aria-invalid');
     $passwordMismatchError.classList.add('hidden');
 
+    // Construct a FormData object based on form values.
     const formData = new FormData($form);
     const password = formData.get('password');
     const passwordConfirm = formData.get(
       'password_confirm',
     );
 
+    // The only fields we cannot leverage the browser to validate
+    // is the password confirmation, so we use JavaScript to achieve that.
     if (password !== passwordConfirm) {
       $passwordConfirmInput.setAttribute(
         'aria-invalid',
