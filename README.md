@@ -1,8 +1,4 @@
-# UI-Components
-Simple UI components
-
-## Frameworks Supported
-* React
+# React Coding
 
 ## Custom Hooks
 * useTimeout
@@ -19,7 +15,7 @@ Simple UI components
 * useUpdateEffect
 * useUpdate
 
-## UI
+## UI-Components
 * Counter
 * Contact Form
 * SignUp Form
