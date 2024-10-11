@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
-export function usePrevious(value) {
+function usePrevious(value) {
   const previousRef = useRef();
 
   useEffect(() => {
@@ -8,4 +8,16 @@ export function usePrevious(value) {
   }, [value]);
 
   return previousRef.current;
+}
+
+/* Usage example */
+
+export default function App() {
+  const previousValue = usePrevious(1);
+
+  return (
+    <div>
+      <p>Previous value: {previousValue}</p>
+    </div>
+  );
 }

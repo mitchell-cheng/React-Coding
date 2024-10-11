@@ -3,6 +3,7 @@
 ## Custom Hooks
 * useTimeout
 * useIsFirstRender
+* useFetch
 * useSWR
 * usePrevious
 * useHover

@@ -1,14 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-export function useSWR<T = any, E = any>(
-  _key: string,
-  fetcher: () => T | Promise<T>
-): {
-  data?: T
-  error?: E
-} {
-  const [data, setData] = useState<T>();
-  const [error, setError] = useState<E>();
+function useSWR(_key, fetcher) {
+  const [data, setData] = useState();
+  const [error, setError] = useState();
   const fetchResult = fetcher();
 
   useEffect(() => {
@@ -31,5 +25,11 @@ export function useSWR<T = any, E = any>(
   return {
     data: result,
     error,
-  }
+  };
+}
+
+/* Usage example */
+
+export default function App() {
+  return <div></div>;
 }
