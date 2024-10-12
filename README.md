@@ -15,6 +15,7 @@
 * useClickOutside
 * useUpdateEffect
 * useUpdate
+* useKeyPress
 
 ## UI-Components
 * Counter
