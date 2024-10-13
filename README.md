@@ -1,21 +1,31 @@
 # React Coding
 
 ## Custom Hooks
+### Timer
 * useTimeout
-* useIsFirstRender
-* useFetch
+* useInterval
+* useCountdown
+* useDebounce
+* useThrottle
+### Network
 * useSWR
+* useFetch
+### Lifecycle
+* useIsFirstRender
 * usePrevious
+* useEffectOnce
+* useUpdateEffect
+* useIsMounted
+* useUpdate
+### Event
+* useEventListener
 * useHover
 * useToggle
-* useDebounce
-* useEffectOnce
 * useFocus
-* useIsMounted
 * useClickOutside
-* useUpdateEffect
-* useUpdate
 * useKeyPress
+* useWindowScroll
+* useWindowResize
 
 ## UI-Components
 * Counter
