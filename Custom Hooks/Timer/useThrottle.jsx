@@ -4,23 +4,20 @@ function useThrottle(callback, delay) {
   const lastCall = useRef(0);
   const timerId = useRef(null);
 
-  const throttledFunction = useCallback(
-    (...args) => {
-      const now = Date.now();
+  const throttledFunction = useCallback((...args) => {
+    const now = Date.now();
 
-      if (lastCall.current === 0 || now - lastCall.current >= delay) {
-        lastCall.current = now;
+    if (lastCall.current === 0 || now - lastCall.current >= delay) {
+      lastCall.current = now;
+      callback(...args);
+    } else if (!timerId.current) {
+      timerId.current = setTimeout(() => {
+        lastCall.current = Date.now();
         callback(...args);
-      } else if (!timerId.current) {
-        timerId.current = setTimeout(() => {
-          lastCall.current = Date.now();
-          callback(...args);
-          timerId.current = null;
-        }, delay - (now - lastCall.current));
-      }
-    },
-    [callback, delay]
-  );
+        timerId.current = null;
+      }, delay - (now - lastCall.current));
+    }
+  }, [callback, delay]);
 
   return throttledFunction;
 }

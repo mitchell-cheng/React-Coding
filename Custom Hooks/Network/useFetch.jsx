@@ -24,11 +24,7 @@ function useFetch(url) {
     fetchData();
   }, [url]);
 
-  return {
-    data,
-    error,
-    loading
-  };
+  return { data, error, loading };
 }
 
 /* Usage example */
