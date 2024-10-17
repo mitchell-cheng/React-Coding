@@ -9,7 +9,7 @@
 * useThrottle
 ### Network
 * useSWR
-* useFetch
+* useFetch / useQuery / useRequest
 ### Lifecycle
 * useIsFirstRender
 * usePrevious
@@ -26,6 +26,10 @@
 * useKeyPress
 * useWindowScroll
 * useWindowResize
+* useBodyScrollLock
+* usePosition
+### Web APIs
+* useLocalStorage
 
 ## UI-Components
 * Counter
