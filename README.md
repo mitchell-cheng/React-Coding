@@ -56,5 +56,7 @@
 * Dynamically Generated Text Art
 * Meme Generator with Custom Text
 * Dynamic Image Gallery with Lightbox
-
+* Tabs
+* DataTable
+* Users Database
 
