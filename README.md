@@ -59,4 +59,5 @@
 * Tabs
 * DataTable
 * Users Database
-
+* Modal Dialog
+* Image Carousel
