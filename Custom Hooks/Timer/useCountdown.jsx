@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { isTypeReferenceNode } from "typescript";
 
 function useCountdown(initialValue) {
   const [count, setCount] = useState(initialValue);
