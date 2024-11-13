@@ -7,7 +7,7 @@
 * useCountdown
 * useDebounce
 * useThrottle
-### Network
+### Request
 * useSWR
 * useFetch / useQuery / useRequest
 ### Lifecycle
