@@ -1,10 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <form>
@@ -16,15 +14,12 @@
           required
           type="text"
           pattern="^[a-zA-Z0-9]+$"
-          minlength="4" />
+          minlength="4"
+        />
       </div>
       <div>
         <label for="email-input">Email</label>
-        <input
-          id="email-input"
-          name="email"
-          required
-          type="email" />
+        <input id="email-input" name="email" required type="email" />
       </div>
       <div>
         <label for="password-input">Password</label>
@@ -33,22 +28,20 @@
           name="password"
           required
           type="password"
-          minlength="6" />
+          minlength="6"
+        />
       </div>
       <div>
-        <label for="password-confirm-input">
-          Confirm Password
-        </label>
+        <label for="password-confirm-input"> Confirm Password </label>
         <input
           id="password-confirm-input"
           name="password_confirm"
           required
           type="password"
           minlength="6"
-          aria-describedby="password-mismatch-error" />
-        <div
-          class="error hidden"
-          id="password-mismatch-error">
+          aria-describedby="password-mismatch-error"
+        />
+        <div class="error hidden" id="password-mismatch-error">
           The passwords do not match
         </div>
       </div>
